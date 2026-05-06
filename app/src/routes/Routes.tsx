@@ -6,7 +6,7 @@ import Word from "@screens/Word"
 const Stack = createNativeStackNavigator();
 export default function Routes(){
     return(
-        <Stack.Navigator screenOptions={{"headerShown": false}}>
+        <Stack.Navigator initialRouteName="Home" screenOptions={{"headerShown": false}}>
             <Stack.Screen name="Home" component={Home}/>
             <Stack.Screen name="History" component={History}/>
             <Stack.Screen name="Word" component={Word}/>
