@@ -4,7 +4,8 @@ export const styles = StyleSheet.create({
      
     container: {
         display: "flex",
-        justifyContent: "space-around",
+        flexDirection: "row",
+        justifyContent: "space-between",
         alignItems: "center",
         height: 64,
         backgroundColor: "#ffffff30",
@@ -28,9 +29,27 @@ export const styles = StyleSheet.create({
         borderColor: "#fff3f323"
         
     },
+    textContainer: {
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "space-between",
+        alignItems: "center",
+        marginHorizontal: 12
+    },
     title: {
+        fontFamily: "MontserratBold",
         fontSize: 24,
         fontWeight: "bold",
-        color: "#fff"
+        color: "#fff",
+        marginHorizontal: 8
+    },
+    button:{
+        marginHorizontal: 12
+    },
+    buttonText:{
+        fontFamily: "MontserratBold",
+        fontSize: 16,
+        fontWeight: "bold",
+        marginHorizontal: 8
     }
 })
