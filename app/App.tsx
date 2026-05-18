@@ -1,7 +1,7 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { useFonts } from "expo-font";
 import Routes from "@routes/Routes"
-import { LanguageProvider } from "./src/context/LanguageContext";
+import { LanguageProvider, useLanguage } from "./src/context/LanguageContext";
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -9,11 +9,16 @@ export default function App() {
     MontserratBold: require("./assets/fonts/Montserrat-Bold.ttf"),
     MontserratSemibold: require("./assets/fonts/Montserrat-SemiBold.ttf"),
   });
+  const { loading } = useLanguage();
 
+  if (loading) {
+    return null;
+  }
   if (!fontsLoaded) {
     return null;
   }
   return (
+    
     <LanguageProvider>
       <NavigationContainer>
         <Routes/>
