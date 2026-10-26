@@ -7,6 +7,7 @@ import {
 } from "react";
 
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { TranslationKey, translations } from "../i18n/translations";
 
 type Language = "en" | "pt";
 
@@ -14,6 +15,7 @@ interface LanguageContextData {
   language: Language;
   handleLanguage: () => void;
   loading: boolean;
+  t: (key: TranslationKey) => string;
 }
 
 const LanguageContext = createContext({} as LanguageContextData);
@@ -56,6 +58,7 @@ export function LanguageProvider({ children }: Props) {
         language,
         handleLanguage,
         loading,
+        t: (key) => translations[language][key],
       }}
     >
       {children}

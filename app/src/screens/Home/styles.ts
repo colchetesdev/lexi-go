@@ -6,6 +6,7 @@ export const styles = StyleSheet.create({
         width:"100%",
         height:"100%",
         overflow: "hidden",
+        minHeight: 0,
         backgroundColor: "#c28054",
     },
     content: { flex: 1, paddingTop: 34, paddingHorizontal: 21 },
