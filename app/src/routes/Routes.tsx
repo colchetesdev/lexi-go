@@ -4,6 +4,7 @@ import History from "@screens/History"
 import Word from "@screens/Word"
 import Search from "@screens/Search"
 import { RootStackParamList } from "../types/navigation";
+import About from "@screens/About";
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 export default function Routes(){
@@ -13,6 +14,7 @@ export default function Routes(){
             <Stack.Screen name="History" component={History}/>
             <Stack.Screen name="Word" component={Word}/>
             <Stack.Screen name="Search" component={Search}/>
+            <Stack.Screen name="About" component={About}/>
         </Stack.Navigator>
     )
 }

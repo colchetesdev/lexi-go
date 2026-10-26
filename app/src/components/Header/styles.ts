@@ -33,6 +33,19 @@ export const styles = StyleSheet.create({
     },
     button:{
     },
+    actions: {
+        flexDirection: "row",
+        alignItems: "center",
+        gap: 6,
+    },
+    infoButton: {
+        width: 30,
+        height: 30,
+        alignItems: "center",
+        justifyContent: "center",
+        borderRadius: 15,
+        backgroundColor: "#FFFFFF22",
+    },
     buttonText:{
         fontFamily: "MontserratBold",
         fontSize: 16,
