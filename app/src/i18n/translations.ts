@@ -2,6 +2,22 @@ export type TranslationKey =
   | "todayWordIs"
   | "seeMore"
   | "discovered"
+  | "discoveredCount"
+  | "dailyReview"
+  | "reviewDescription"
+  | "reviewEmpty"
+  | "statistics"
+  | "learnedWords"
+  | "remainingWords"
+  | "completion"
+  | "categoryProgress"
+  | "difficultyProgress"
+  | "allStatus"
+  | "learnedStatus"
+  | "notLearnedStatus"
+  | "openStatistics"
+  | "openReview"
+  | "status"
   | "relatedWords"
   | "history"
   | "results"
@@ -24,6 +40,7 @@ export type TranslationKey =
   | "difficultyValue"
   | "markWord"
   | "unmarkWord"
+  | "completedWord"
   | "about"
   | "aboutTitle"
   | "aboutDescription"
@@ -40,13 +57,40 @@ export type TranslationKey =
   | "aboutDevelopmentTitle"
   | "aboutDevelopmentText"
   | "aboutCollaboratorsTitle"
-  | "aboutCollaboratorsText";
+  | "aboutCollaboratorsText"
+  | "goHome"
+  | "changeLanguage"
+  | "playPronunciation"
+  | "goBack"
+  | "openTerm"
+  | "openSearch"
+  | "openHistory"
+  | "previousScreen"
+  | "closeSearch"
+  | "clearSearch"
+  | "filterOptions";
 
 export const translations: Record<"en" | "pt", Record<TranslationKey, string>> = {
   en: {
     todayWordIs: "Today, the word is",
     seeMore: "See more",
-    discovered: "99 of 156 discovered",
+    discovered: "Discovered",
+    discoveredCount: "{{count}} of {{total}} discovered",
+    dailyReview: "Daily review",
+    reviewDescription: "Review a few completed words every day.",
+    reviewEmpty: "Complete words to start your daily review.",
+    statistics: "Statistics",
+    learnedWords: "Learned words",
+    remainingWords: "Remaining words",
+    completion: "Completion",
+    categoryProgress: "By category",
+    difficultyProgress: "By difficulty",
+    allStatus: "All words",
+    learnedStatus: "Learned",
+    notLearnedStatus: "Not learned",
+    openStatistics: "Open statistics",
+    openReview: "Open daily review",
+    status: "Status",
     relatedWords: "Related words",
     history: "History",
     results: "Results",
@@ -69,6 +113,7 @@ export const translations: Record<"en" | "pt", Record<TranslationKey, string>> =
     difficultyValue: "Difficulty: Beginner",
     markWord: "Mark word as learned",
     unmarkWord: "Unmark word",
+    completedWord: "Word already completed",
     about: "About",
     aboutTitle: "Learn technology English with LexiGo",
     aboutDescription: "LexiGo helps Portuguese speakers learn the English vocabulary used in technology, programming and software development.",
@@ -85,12 +130,39 @@ export const translations: Record<"en" | "pt", Record<TranslationKey, string>> =
     aboutDevelopmentTitle: "Development support",
     aboutDevelopmentText: "The project supports the development and learning of the teachers and students of Lar Donato Flores by bringing technology, language and everyday practice together.",
     aboutCollaboratorsTitle: "Collaborators",
+    goHome: "Go to home",
+    changeLanguage: "Change language",
+    playPronunciation: "Play pronunciation",
+    goBack: "Go back",
+    openTerm: "Open term",
+    openSearch: "Open search",
+    openHistory: "Open history",
+    previousScreen: "Go to previous screen",
+    closeSearch: "Close search",
+    clearSearch: "Clear search",
+    filterOptions: "Filter options",
     aboutCollaboratorsText: "Built with the collaboration of the LexiGo development team, teachers and collaborators of Lar Donato Flores, whose educational context guides the project’s priorities.",
   },
   pt: {
     todayWordIs: "Hoje, a palavra é",
     seeMore: "Ver mais",
-    discovered: "99 de 156 descobertas",
+    discovered: "Descobertas",
+    discoveredCount: "{{count}} de {{total}} descobertas",
+    dailyReview: "Revisão diária",
+    reviewDescription: "Revise algumas palavras concluídas todos os dias.",
+    reviewEmpty: "Conclua palavras para começar sua revisão diária.",
+    statistics: "Estatísticas",
+    learnedWords: "Palavras aprendidas",
+    remainingWords: "Palavras restantes",
+    completion: "Conclusão",
+    categoryProgress: "Por categoria",
+    difficultyProgress: "Por dificuldade",
+    allStatus: "Todas as palavras",
+    learnedStatus: "Aprendidas",
+    notLearnedStatus: "Não aprendidas",
+    openStatistics: "Abrir estatísticas",
+    openReview: "Abrir revisão diária",
+    status: "Status",
     relatedWords: "Palavras relacionadas",
     history: "Histórico",
     results: "Resultados",
@@ -113,6 +185,7 @@ export const translations: Record<"en" | "pt", Record<TranslationKey, string>> =
     difficultyValue: "Dificuldade: Iniciante",
     markWord: "Marcar palavra como aprendida",
     unmarkWord: "Desmarcar palavra",
+    completedWord: "Palavra já concluída",
     about: "Sobre",
     aboutTitle: "Aprenda inglês de tecnologia com o LexiGo",
     aboutDescription: "O LexiGo ajuda falantes de português a aprender o vocabulário em inglês usado em tecnologia, programação e desenvolvimento de software.",
@@ -129,6 +202,17 @@ export const translations: Record<"en" | "pt", Record<TranslationKey, string>> =
     aboutDevelopmentTitle: "Apoio ao desenvolvimento",
     aboutDevelopmentText: "O projeto auxilia o desenvolvimento e o aprendizado dos docentes e estudantes do Lar Donato Flores, aproximando tecnologia, linguagem e prática cotidiana.",
     aboutCollaboratorsTitle: "Colaboradores",
+    goHome: "Ir para o início",
+    changeLanguage: "Alterar idioma",
+    playPronunciation: "Ouvir pronúncia",
+    goBack: "Voltar",
+    openTerm: "Abrir termo",
+    openSearch: "Abrir busca",
+    openHistory: "Abrir histórico",
+    previousScreen: "Ir para a tela anterior",
+    closeSearch: "Fechar busca",
+    clearSearch: "Limpar busca",
+    filterOptions: "Opções de filtro",
     aboutCollaboratorsText: "Desenvolvido com a colaboração da equipe do LexiGo, dos docentes e dos colaboradores do Lar Donato Flores, cujo contexto educacional orienta as prioridades do projeto.",
   },
 };

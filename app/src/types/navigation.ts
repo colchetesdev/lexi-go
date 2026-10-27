@@ -4,4 +4,6 @@ export type RootStackParamList = {
   Word: { term?: string } | undefined;
   Search: undefined;
   About: undefined;
+  Review: undefined;
+  Statistics: undefined;
 };

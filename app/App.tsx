@@ -3,6 +3,7 @@ import { useFonts } from "expo-font";
 import { StatusBar } from "expo-status-bar";
 import { Platform } from "react-native";
 import { useEffect } from "react";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 import Routes from "@routes/Routes";
 import { LanguageProvider, useLanguage } from "./src/context/LanguageContext";
 
@@ -37,24 +38,27 @@ function AppContent() {
       element.style.margin = margin;
     });
   }, []);
-  const [fontsLoaded] = useFonts({
+  const [fontsLoaded, fontError] = useFonts({
     Montserrat: require("./assets/fonts/Montserrat-Regular.ttf"),
-    MontserratBold: require("./assets/fonts/Montserrat-Bold.ttf"),
     MontserratSemibold: require("./assets/fonts/Montserrat-SemiBold.ttf"),
+    MontserratBold: require("./assets/fonts/Montserrat-Bold.ttf"),
+    MontserratRegular: require("./assets/fonts/Montserrat-Regular.ttf"),
   });
   if (loading) {
     return null;
   }
-  if (!fontsLoaded) {
+  if (!fontsLoaded && !fontError) {
     return null;
   }
   return (
     
     <>
       <StatusBar style="light" />
-      <NavigationContainer>
-        <Routes />
-      </NavigationContainer>
+      <SafeAreaProvider>
+        <NavigationContainer>
+          <Routes />
+        </NavigationContainer>
+      </SafeAreaProvider>
     </>
   );
 }

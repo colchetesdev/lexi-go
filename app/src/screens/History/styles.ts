@@ -1,2 +1,2 @@
 import { StyleSheet } from "react-native";
-export const styles = StyleSheet.create({ container: { flex: 1, height: "100%", minHeight: 0, overflow: "hidden", backgroundColor: "#c28054" } });
+export const styles = StyleSheet.create({ container: { flex: 1, height: "100%", minHeight: 0, overflow: "hidden", backgroundColor: "#242432" }, back: { position: "absolute", left: 12, zIndex: 2, width: 36, height: 36, borderRadius: 18, alignItems: "center", justifyContent: "center", backgroundColor: "#FFFFFF30", borderWidth: 1, borderColor: "#FFFFFF72" } });

@@ -30,26 +30,30 @@ export function LanguageProvider({ children }: Props) {
 
   useEffect(() => {
     async function loadLanguage() {
-      const stored = await AsyncStorage.getItem("@language");
+      try {
+        const stored = await AsyncStorage.getItem("@language");
 
-      if (stored === "en" || stored === "pt") {
-        setLanguage(stored);
+        if (stored === "en" || stored === "pt") {
+          setLanguage(stored);
+        }
+      } catch {
+        // O idioma padrão continua disponível quando o armazenamento falha.
+      } finally {
+        setLoading(false);
       }
-
-      setLoading(false);
     }
 
     loadLanguage();
   }, []);
 
   async function handleLanguage() {
-    setLanguage((prev) => {
-      const newLang = prev === "en" ? "pt" : "en";
-
-      AsyncStorage.setItem("@language", newLang);
-
-      return newLang;
-    });
+    const newLang = language === "en" ? "pt" : "en";
+    setLanguage(newLang);
+    try {
+      await AsyncStorage.setItem("@language", newLang);
+    } catch {
+      // A troca visual continua funcionando nesta sessão.
+    }
   }
 
   return (
